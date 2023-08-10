@@ -1,0 +1,13 @@
+
+CREATE FUNCTION dbo.GetSKUPrice
+(
+	@ID_SKU INT
+)
+RETURNS DECIMAL(18, 2)
+
+BEGIN
+	DECLARE @addSUM DECIMAL(18,2)
+	SELECT @addSUM = SUM (Quantity) / SUM (Value) FROM dbo.Basket
+	WHERE ID_SKU = @ID_SKU
+	RETURN @addSUM
+END;
