@@ -9,7 +9,7 @@ USE [ics-it];
 		CREATE TABLE dbo.Family
 	(
 		ID INT  identity (1,1) PRIMARY KEY,
-		SurName VARCHAR(30) NOT NULL,
+		SurName VARCHAR(255) NOT NULL,
 		BudgetValue DECIMAL
 	);
 		CREATE TABLE dbo.Basket
